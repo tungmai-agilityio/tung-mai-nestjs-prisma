@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
+import Link from 'next/link';
 
 const Draft: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -41,9 +42,9 @@ const Draft: React.FC = () => {
             value={content}
           />
           <input disabled={!content || !title} type="submit" value="Create" />
-          <a className="back" href="#" onClick={() => Router.push('/')}>
+          <Link className="back" href="#" onClick={() => Router.push('/')}>
             or Cancel
-          </a>
+          </Link>
         </form>
       </div>
       <style jsx>{`
